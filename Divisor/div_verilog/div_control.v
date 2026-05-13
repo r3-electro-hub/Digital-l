@@ -17,10 +17,11 @@ module div_control (
 
 parameter INIT       = 3'b000,
           SHIFT_DV   = 3'b001,
-          CHECK_MSB  = 3'b010,
-          ASSIGN_DV  = 3'b011,
-          CHECK_C    = 3'b100,
-          DONE_STATE = 3'b101;
+          WAIT_SHIFT = 3'b010,
+          CHECK_MSB  = 3'b011,
+          ASSIGN_DV  = 3'b100,
+          CHECK_C    = 3'b101,
+          DONE_STATE = 3'b110;
 
 reg [2:0] state;
 
@@ -75,8 +76,12 @@ always @(posedge clk) begin
                 done   <= 0;
 
                 state <= CHECK_MSB;
-
+                if (z) begin
+                    state<=DONE_STATE;
+                end
             end
+
+
 
             //================================================
             // VERIFICAR SIGNO DE LA RESTA
@@ -188,7 +193,7 @@ begin
     case(state)
 
         INIT  : state_name = "INIT";
-        CHECK_MSB : state_name = "CHECK_DV";
+        CHECK_MSB : state_name = "CHECK_MSB";
         CHECK_C : state_name = "CHECK_C";
         ASSIGN_DV   : state_name = "ASSING_DV";
         SHIFT_DV : state_name = "SHIFT_DV";
