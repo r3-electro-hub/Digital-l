@@ -34,32 +34,22 @@ sim_post_syn:
 	gtkwave $(TARGET)_tb.vcd
 
 svg:
-	rm -rf *.svg *.out *.dot
+	rm -rf *.svg *.out *.dot *.json
 
 	yosys -p "\
-	prep -top $(TARGET); \
-	memory_map; \
-	opt; \
-	opt_expr; \
-	techmap; \
-	abc -g AND,OR,XOR; \
-	write_json $(TARGET).json" \
-	$(OBJS)
-
-	yosys -p "\
-	read_verilog $(OBJS); \
-	proc; \
-	memory_map; \
-	opt; \
-	opt_expr; \
-	techmap; \
-	abc -g AND,OR,XOR; \
-	show -format dot -prefix $(TARGET)_out"
+		read_verilog $(OBJS); \
+		prep -top $(TARGET); \
+		memory_map; \
+		opt; \
+		opt_expr; \
+		techmap; \
+		abc; \
+		write_json $(TARGET).json \
+	"
 
 	netlistsvg $(TARGET).json -o $(TARGET).svg
 
 	firefox $(TARGET).svg
-
 clean:
 	rm -rf \
 	*.svg \

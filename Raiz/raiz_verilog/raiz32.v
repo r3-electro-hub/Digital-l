@@ -62,6 +62,7 @@ module raiz32 (
         .A(reg_bit_out),
         .B(reg_res_out),
         .C(reg_A_out),
+        // .D(reg_res_out>>1),
         .sel(sel_A),
         .Y(aluA_in)
     );
@@ -69,6 +70,7 @@ module raiz32 (
         .A(reg_res_out),
         .B(reg_bit_out),
         .C(reg_temp_out),
+        // .D(0),
         .sel(sel_B),
         .Y(aluB_in)
     );
@@ -105,5 +107,5 @@ module raiz32 (
         .sel_op(sel_op),
         .done(done)
     );
-    assign Result = reg_res_out[15:0];
+    assign Result = reg_res_out[31:0];
 endmodule

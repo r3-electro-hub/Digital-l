@@ -8,7 +8,7 @@ reg start;
 
 reg [31:0] A;
 
-wire [15:0] Result;
+wire [31:0] Result;
 wire done;
 
 raiz32 DUT(
@@ -31,7 +31,7 @@ always #(PERIOD/2)
 task run_test;
 
     input [31:0] value;
-    input [15:0] expected;
+    input [31:0] expected;
 
 begin
 
@@ -72,17 +72,18 @@ initial begin
     @(negedge clk);
     rst = 0;
 
-    //run_test(0, 0);
-    //run_test(1, 1);
+    run_test(0, 0);
+    run_test(1, 1);
     run_test(4, 2);
-    //run_test(9, 3);
-    //run_test(16, 4);
-    //run_test(25, 5);
+    run_test(9, 3);
+    run_test(16, 4);
+    run_test(25, 5);
+    run_test(36,6);
     //run_test(121, 11);
-    //run_test(1024, 32);
+    run_test(1024, 32);
     //run_test(65535, 255);
-
-    #100;
+   
+   #100;
 
     $finish;
 

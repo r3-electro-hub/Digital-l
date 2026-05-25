@@ -3,6 +3,7 @@ module mux(
     input [31:0] A,
     input [31:0] B,
     input [31:0] C,
+    input [31:0] D,
 
     input [1:0] sel,
 
@@ -22,6 +23,9 @@ always @(*) begin
 
         2'b10:
             Y = C;
+        
+        // 2'b11:
+        //     Y = D;
 
         default:
             Y = 32'd0;
