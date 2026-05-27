@@ -2,14 +2,14 @@ TARGET = raiz32
 TB = $(TARGET)_TB.v
 
 OBJS = \
-	alu.v \
 	comp.v \
 	control_raiz.v \
-	mux.v \
 	raiz32.v \
 	reg_Basic.v \
 	reg_Shift1.v \
-	reg_Shift2.v
+	reg_Shift2.v \
+	subs.v \
+	sum.v \
 
 ICE40_SIM_CELLS = ./lattice_sim/cells_sim_ecp5.v
 

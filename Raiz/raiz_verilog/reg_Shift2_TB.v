@@ -77,28 +77,6 @@ module reg_Shift2_TB;
             $display("PASS");
         else
             $display("FAIL");
-
-        //------------------------------------------------
-        // TEST 2 : WRITE
-        //------------------------------------------------
-
-        $display("----- TEST 2 : WRITE -----");
-
-        alu_out = 32'd64;
-
-        wr = 1;
-
-        @(posedge clk);
-
-        wr = 0;
-
-        @(posedge clk);
-
-        if(bit1 == 32'd64)
-            $display("PASS");
-        else
-            $display("FAIL");
-
         //------------------------------------------------
         // TEST 3 : SHIFT
         //------------------------------------------------

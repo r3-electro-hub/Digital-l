@@ -79,9 +79,9 @@ initial begin
     run_test(16, 4);
     run_test(25, 5);
     run_test(36,6);
-    //run_test(121, 11);
+    run_test(121, 11);
     run_test(1024, 32);
-    //run_test(65535, 255);
+    run_test(65535, 255);
    
    #100;
 
