@@ -27,12 +27,13 @@ parameter SHIFT_RES      = 4'b1000;
 parameter SHIFT_BIT      = 4'b1001;
 parameter END_STATE      = 4'b1010;
 
-
+reg [4:0] count;
 reg [3:0] state;
 always @(posedge clk) begin
 
     if(rst) begin
         state <= INIT_0;
+        count <= 0;
     end
 
     else begin
@@ -40,6 +41,7 @@ always @(posedge clk) begin
         case(state)
 
             INIT_0: begin
+                count <= 0;
                 if(start)
                     state <= INIT;
                 else
@@ -82,7 +84,11 @@ always @(posedge clk) begin
             end
 
             END_STATE: begin
-                state<= INIT_0;
+                count <= count + 1'b1;
+                if (count > 5'd28)
+                    state <= INIT_0;
+                else
+                    state <= END_STATE;
             end
 
             default: state <= INIT_0;
