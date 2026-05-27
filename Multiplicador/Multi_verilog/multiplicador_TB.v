@@ -141,7 +141,7 @@ begin
     $dumpfile("multiplicador_TB.vcd");
 
     $dumpvars(0, uut);
-    $dumpvars(0, multiplicador_tb);
+    $dumpvars(0, multiplicador_TB);
 
 end
 endmodule
