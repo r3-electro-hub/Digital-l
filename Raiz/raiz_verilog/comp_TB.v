@@ -8,11 +8,10 @@ module comp_TB;
 
     reg [31:0] A;
     reg [31:0] bit1;
-    reg [31:0] temp;
+    reg [31:0] out_sum;
 
     wire z;
-    wire bit_gt_a;
-    wire a_ge_temp;
+    wire a_ge_res_bit;
 
     //====================================================
     // DUT
@@ -21,10 +20,9 @@ module comp_TB;
     comp DUT(
         .A(A),
         .bit1(bit1),
-        .temp(temp),
+        .out_sum(out_sum),
         .z(z),
-        .bit_gt_a(bit_gt_a),
-        .a_ge_temp(a_ge_temp)
+        .a_ge_res_bit(a_ge_res_bit)
     );
 
     //====================================================
@@ -41,7 +39,7 @@ module comp_TB;
 
         A     = 32'd20;
         bit1  = 32'd0;
-        temp  = 32'd15;
+        out_sum  = 32'd15;
 
         #1;
 
@@ -50,56 +48,40 @@ module comp_TB;
         else
             $display("FAIL : z incorrect");
 
+    
         //------------------------------------------------
-        // TEST 2 : bit1 > A
-        //------------------------------------------------
-
-        $display("----- TEST 2 : bit1 > A -----");
-
-        A     = 32'd20;
-        bit1  = 32'd40;
-        temp  = 32'd15;
-
-        #1;
-
-        if(bit_gt_a == 1'b1)
-            $display("PASS");
-        else
-            $display("FAIL : bit_gt_a incorrect");
-
-        //------------------------------------------------
-        // TEST 3 : A >= temp
+        // TEST 3 : A >= out_sum
         //------------------------------------------------
 
-        $display("----- TEST 3 : A >= temp -----");
+        $display("----- TEST 3 : A >= out_sum -----");
 
         A     = 32'd50;
         bit1  = 32'd10;
-        temp  = 32'd15;
+        out_sum  = 32'd15;
 
         #1;
 
-        if(a_ge_temp == 1'b1)
+        if(a_ge_res_bit == 1'b1)
             $display("PASS");
         else
-            $display("FAIL : a_ge_temp incorrect");
+            $display("FAIL : a_ge_res_bit incorrect");
 
         //------------------------------------------------
         // TEST 4 : A < temp
         //------------------------------------------------
 
-        $display("----- TEST 4 : A < temp -----");
+        $display("----- TEST 4 : A < out_sum -----");
 
         A     = 32'd5;
         bit1  = 32'd1;
-        temp  = 32'd20;
+        out_sum  = 32'd20;
 
         #1;
 
-        if(a_ge_temp == 1'b0)
+        if(a_ge_res_bit == 1'b0)
             $display("PASS");
         else
-            $display("FAIL : a_ge_temp incorrect");
+            $display("FAIL : a_ge_res_bit incorrect");
 
         //------------------------------------------------
         // FIN SIMULACIÓN
