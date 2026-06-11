@@ -64,7 +64,7 @@ module comp_TB;
         if(a_ge_res_bit == 1'b1)
             $display("PASS");
         else
-            $display("FAIL : a_ge_res_bit incorrect");
+            $display("FAIL : a_ge_res_bit incorrect");ma
 
         //------------------------------------------------
         // TEST 4 : A < temp
