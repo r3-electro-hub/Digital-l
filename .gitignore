@@ -1,0 +1,25 @@
+# Ignorar todo
+*
+
+# No ignorar el propio .gitignore
+!.gitignore
+
+# Permitir directorios (CRÍTICO)
+!*/
+
+# Permitir archivos por extensión
+!*.svg
+!*.jpg
+!*.png
+!*.v
+!*.make
+
+
+
+
+
+
+
+
+
+
