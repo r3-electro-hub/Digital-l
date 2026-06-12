@@ -12,7 +12,7 @@
 !*.jpg
 !*.png
 !*.v
-!*.makefile
+!*Makefile
 
 
 
