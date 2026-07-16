@@ -1,25 +1,24 @@
-# Ignorar todo
+# Ignorar todo por defecto
 *
 
-# No ignorar el propio .gitignore
+# No ignorar este archivo
 !.gitignore
 
-# Permitir directorios (CRÍTICO)
-!*/
+# Permitir que Git explore carpetas a cualquier nivel de profundidad
+!**/
 
-# Permitir archivos por extensión
+# Permitir archivos de diseño/código (añade aquí .cpp, .h, .ini si los usas en PlatformIO)
+!*.v
+!*.cpp
+!*.h
+!platformio.ini
+!Makefile
+!*.gtkw
+!*.bin
+!*.hex
+
+
+# Permitir imágenes y recursos visuales
 !*.svg
 !*.jpg
 !*.png
-!*.v
-!Makefile
-
-
-
-
-
-
-
-
-
-

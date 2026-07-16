@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Thu Jul 16 03:49:09 2026
+[*]
+[dumpfile] "/home/r3/Documentos/Digital I/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/divisor/divisor_TB.vcd"
+[dumpfile_mtime] "Thu Jul 16 03:48:25 2026"
+[dumpfile_size] 25915
+[savefile] "/home/r3/Documentos/Digital I/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/divisor/divisor.gtkw"
+[timestart] 0
+[size] 1920 1108
+[pos] -46 -46
+*-17.833624 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 209
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 333
+@24
+divisor_TB.A[15:0]
+divisor_TB.B[15:0]
+divisor_TB.Result[15:0]
+@28
+divisor_TB.clk
+divisor_TB.done
+divisor_TB.rst
+divisor_TB.start
+[pattern_trace] 1
+[pattern_trace] 0

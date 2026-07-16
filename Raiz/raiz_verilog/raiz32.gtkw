@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Thu Jul 16 03:55:22 2026
+[*]
+[dumpfile] "/home/r3/Documentos/Digital I/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/raiz/raiz32_TB.vcd"
+[dumpfile_mtime] "Thu Jul 16 03:54:14 2026"
+[dumpfile_size] 32626
+[savefile] "/home/r3/Documentos/Digital I/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/raiz/raiz32.gtkw"
+[timestart] 0
+[size] 1920 1108
+[pos] -46 -46
+*-18.805532 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] raiz32_TB.
+[treeopen] raiz32_TB.DUT.
+[sst_width] 209
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 333
+@28
+raiz32_TB.clk
+raiz32_TB.rst
+@24
+raiz32_TB.A[31:0]
+@25
+raiz32_TB.Result[31:0]
+@28
+raiz32_TB.done
+raiz32_TB.start
+@820
+raiz32_TB.DUT.ctrl.state_name[320:1]
+[pattern_trace] 1
+[pattern_trace] 0

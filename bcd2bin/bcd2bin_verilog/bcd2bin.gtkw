@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.126 (w)1999-2026 BSI
+[*] Thu Jul 16 04:00:18 2026
+[*]
+[dumpfile] "/home/r3/Documentos/Digital I/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/bcd2bin/bcd2bin_TB.vcd"
+[dumpfile_mtime] "Thu Jul 16 03:59:35 2026"
+[dumpfile_size] 211231
+[savefile] "/home/r3/Documentos/Digital I/digital_UN/basic_circuits/test_peripherals/rtl/cores/test/bcd2bin/bcd2bin.gtkw"
+[timestart] 0
+[size] 1920 1108
+[pos] -46 -46
+*-21.524555 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 209
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 333
+@28
+bcd2bin_TB.clk
+bcd2bin_TB.reset
+bcd2bin_TB.start
+@22
+bcd2bin_TB.A_in[19:0]
+@24
+bcd2bin_TB.Result[15:0]
+@28
+bcd2bin_TB.done
+[pattern_trace] 1
+[pattern_trace] 0
