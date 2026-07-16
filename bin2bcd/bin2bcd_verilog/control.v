@@ -20,7 +20,7 @@ module control (
     reg [2:0] state;
     reg [5:0] count;
 
-    always @(posedge clk ) begin
+    always @(posedge clk or negedge reset ) begin
         if (reset) begin
             state <= INIT;
             count <= 0;

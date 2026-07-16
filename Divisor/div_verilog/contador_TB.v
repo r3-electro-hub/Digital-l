@@ -8,8 +8,6 @@ reg dec;
 
 wire [4:0] c;
 
-integer i;
-
 
 
 // Instancia del DUT
@@ -17,8 +15,7 @@ contador uut (
     .clk(clk),
     .reset(reset),
     .dec(dec),
-    .c(c),
-    .z(z)
+    .c(c)
 );
 
 
@@ -79,7 +76,7 @@ initial begin
     // =========================
     // DECREMENTAR HASTA 0
     // =========================
-    while (!z) begin
+    while (c==0) begin
 
     #10;
     dec = 1;

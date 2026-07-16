@@ -1,13 +1,14 @@
-TARGET = contador
-TB = $(TARGET)_TB.v
+TARGET = bcd2bin
+TB = ./TB/$(TARGET)_TB.v
 
 OBJS = \
-	check_c.v \
-	divisor.v \
-	contador.v \
-	div_control.v \
-	left_shift_register.v \
-	resta.v
+	right_shift_reg.v\
+ 	control.v\
+	bcd2bin.v\
+	count.v\
+	mux2.v\
+	reg_msb.v\
+	sum.v
 
 ICE40_SIM_CELLS = ./lattice_sim/cells_sim_ecp5.v
 
@@ -29,35 +30,25 @@ sim_post_syn:
 	$(ICE40_SIM_CELLS)
 
 	vvp sim_post.out
-	gtkwave $(TARGET)_TB.vcd
+	gtkwave $(TARGET)_tb.vcd
 
 svg:
-	rm -rf *.svg *.out *.dot
+	rm -rf *.svg *.out *.dot *.json
 
 	yosys -p "\
-	prep -top $(TARGET); \
-	memory_map; \
-	opt; \
-	opt_expr; \
-	techmap; \
-	abc; \
-	write_json $(TARGET).json" \
-	$(OBJS)
-
-	yosys -p "\
-	read_verilog $(OBJS); \
-	proc; \
-	memory_map; \
-	opt; \
-	opt_expr; \
-	techmap; \
-	abc; \
-	show -format dot -prefix $(TARGET)_out"
+		read_verilog $(OBJS); \
+		prep -top $(TARGET); \
+		memory_map; \
+		opt; \
+		opt_expr; \
+		techmap; \
+		abc; \
+		write_json $(TARGET).json \
+	"
 
 	netlistsvg $(TARGET).json -o $(TARGET).svg
 
 	firefox $(TARGET).svg
-
 clean:
 	rm -rf \
 	*.svg \
